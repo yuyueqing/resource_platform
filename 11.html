@@ -1,0 +1,97 @@
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>JS平滑图片滚动</title> 
+<SCRIPT language=JavaScript type=text/JavaScript> 
+var sh; 
+var marquees; 
+marqueesWidth=610; 
+var speed=20,preLeft=0,stopscroll=false,flag=true; 
+function scrollLeft(){ 
+	preLeft=marquees.scrollLeft; 
+	marquees.scrollLeft+=3; 
+	if(preLeft>=marquees.scrollLeft){ 
+		Right(); 
+	} 
+} 
+function scrollRight(){ 
+	preLeft=marquees.scrollLeft; 
+	marquees.scrollLeft-=3; 
+	if(preLeft<=marquees.scrollLeft){ 
+		Left(); 
+	} 
+} 
+function Left(){ 
+	flag=true; 
+	clearInterval( sh ); 
+	sh = setInterval("scrollLeft()",speed); 
+} 
+function Right(){ 
+	flag=false; 
+	clearInterval( sh ); 
+	sh = setInterval("scrollRight()",speed); 
+} 
+ 
+function normal(){ 
+	clearInterval( sh ); 
+	speed=20; 
+	if(flag)Left(); 
+	else Right(); 
+} 
+function plusSpeed(){ 
+	clearInterval( sh ); 
+	speed=10; 
+	if(flag)Left(); 
+	else Right(); 
+} 
+function init(){ 
+	marquees=document.getElementById("marquees1"); 
+	with(marquees){ 
+		style.width=marqueesWidth+"px"; 
+		style.overflowX="hidden"; 
+		style.overflowY="visible"; 
+	} 
+	Left(); 
+} 
+</SCRIPT> 
+</head> 
+<body onload="init()"> 
+<TABLE cellSpacing=1 width=660 align=center border=0> 
+<TR bgColor=#f8f8f8> 
+<TD align=middle width=25><img  
+      src="http://www.codefans.net/jscss/demoimg/200905/left.gif" border=0 onmouseout=normal() onmouseover=plusSpeed() style="CURSOR: pointer" /></TD> 
+    <TD> 
+      <DIV id="marquees1"> 
+      <TABLE border=0><TR> 
+ 
+<TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s9.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第1期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s1.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第2期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s2.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第3期 </div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s3.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第4期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s4.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第5期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s5.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第6期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s6.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第7期</div></td> 
+</tr></table></TD><TD align=middle width=85><table cellSpacing=0 cellPadding=0 align=center border=0><tr><td><img  
+class=imgframe src='http://www.codefans.net/jscss/demoimg/wall_s7.jpg' border=0 /></td> 
+</tr><tr><td><div align="center">第8期</div></td> 
+</tr></table></TD> 
+</TR></TABLE></DIV> 
+<DIV id=templayer style="LEFT: 0px; VISIBILITY: hidden; POSITION: absolute; TOP: 0px"></DIV></TD> 
+<TD align=middle width=25><img  
+      src="http://www.codefans.net/jscss/demoimg/200905/right.gif" border=0 onmouseout=normal() onmouseover=plusSpeed() /></TD> 
+</TR></TABLE> 
+</body> 
+</html>

@@ -1,0 +1,80 @@
+.text{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: lightgray;
+	border-right-color: lightgray;
+	border-bottom-color: lightgray;
+	border-left-color: lightgray;
+}
+.button {
+	display: inline-block;
+	background-color: white;
+	padding: 10px 12px;
+	text-decoration: none;
+	color: black;
+	border-radius: 5px;
+	font-family: 幼圆;
+    font-size: 12px;
+
+}
+
+.button:hover{
+	display: inline-block;
+	background-color: white;
+	border: 1px solid rgb(86,216,184);
+	padding: 8px 12px;
+	text-decoration: none;
+	color: rgb(86,216,184);
+	border-radius: 5px;
+	font-family: 幼圆;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#content article.gallery ul {
+	margin: 0;
+	padding: 0;
+}
+.gallery ul li { 
+	float: left; 
+	overflow: hidden; 
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+.gallery ul li .overlay {
+   width: 100%; 
+   height: 45%; 
+   background: rgba(0,0,0,0.8);
+   position: absolute;
+   bottom: 0; 
+   left: 0;
+   visibility:hidden;
+}
+#content .gallery ul li .overlay h4 { 
+	color: #fff;
+	font: 200 20px "Dosis"; 
+	margin: 10px 0px 10px 10px; 
+}
+#content .gallery ul li .overlay p { 
+	color: #fff;
+	font: 200 18px "Dosis"; 
+	margin: 10px 0px 10px 10px; 
+}
+.gallery ul li .overlay span { 
+	color: #888888; 
+	font: 200 14px "Dosis"; 
+	margin: 0px 0px 0px 10px; 
+}
+.gallery ul li:hover .overlay { 
+	visibility:visible;
+}	
+/* .row{
+	margin:0 auto;
+} */
